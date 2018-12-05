@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BeersService } from './beers.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'punk-api';
+
+  constructor(private _beerService: BeersService) {
+    
+  }
 }
