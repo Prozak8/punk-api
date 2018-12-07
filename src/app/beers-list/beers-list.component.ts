@@ -12,18 +12,21 @@ export class BeersListComponent implements OnInit {
   currentPage = 1;
 
   constructor(private _beerService: BeersService) { 
-    _beerService.getListOfBeer(this.currentPage).subscribe(res => this.beers = res)
+    _beerService.getListOfBeer(
+      this.currentPage).subscribe(res => this.beers = res)
   }
 
   ngOnInit() {}
 
   previousPage() {
     this.currentPage--
-    this._beerService.getListOfBeer(this.currentPage).subscribe(res => this.beers = res)
+    this._beerService.getListOfBeer(
+      this.currentPage).subscribe(res => this.beers = res)
   }
 
   nextPage() {
     this.currentPage++;
-    this._beerService.getListOfBeer(this.currentPage).subscribe(res => this.beers = res)
+    this._beerService.getListOfBeer(
+      this.currentPage).subscribe(res => this.beers = res)
   }
 }
