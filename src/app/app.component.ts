@@ -10,7 +10,7 @@ export class AppComponent {
   beers;
 
   constructor(private _beerService: BeersService) {
-    this.beers = _beerService.getListOfBeer()
+    _beerService.getListOfBeer().subscribe(res => this.beers = res)
   }
 }
 

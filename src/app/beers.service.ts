@@ -12,33 +12,6 @@ export class BeersService {
   constructor(private _httpClient: HttpClient) { }
 
   getListOfBeer() {
-    return this._httpClient.get(this.beerUrl).subscribe(
-      res => {
-         this.beers = res;
-    });
+    return this._httpClient.get(this.beerUrl);
   }
 }
-
-
-// export class AppComponent {
-//   title;
-
-//   constructor(private http: HttpClient) {
-//     // this.title = _beerService.getListOfBeers();
-//   }
-
-//   ngOnInit(): void {
-//     this.http.get('https://api.punkapi.com/v2/beers')
-//       .subscribe(data => {
-//         this.title = data[5]["name"];
-//       },
-//         (error) => {
-//           debugger;
-//           console.log(error)
-//         }
-//       );
-//   }
-//   myFunction() {
-//     console.log(this.title)
-//   }
-// }
