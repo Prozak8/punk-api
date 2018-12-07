@@ -1,5 +1,11 @@
-<div class="container">
-  <div *ngFor="let beer of beers">
-    <p>{{ beer.name }}</p>
+<div *ngFor="let beer of beers" class="container">
+  <div class="row">
+    <div class="col-6">
+      <h2 class="">{{ beer.name }}</h2>
+      <p class="">{{ beer.description }}</p>
+    </div>
+    <div class="col-4">
+      <img class="" style="height: 80px;" src="{{ beer.image_url }}" alt="{{ beer.name }}">
+    </div>
   </div>
 </div>
