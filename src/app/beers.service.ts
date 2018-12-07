@@ -7,10 +7,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BeersService {
   private beerUrl = 'https://api.punkapi.com/v2';
+  max_per_page = 10;
 
   constructor(private _httpClient: HttpClient) { }
 
   getListOfBeer(page: number = 1) {
-    return this._httpClient.get(`${this.beerUrl}/beers?page=${page}`);
+    return this._httpClient.get(
+      `${this.beerUrl}/beers?page=${page}&per_page=${this.max_per_page}`);
   }
 }
