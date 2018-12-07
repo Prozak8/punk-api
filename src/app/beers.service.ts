@@ -6,17 +6,39 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class BeersService {
-  beers: Object;
-  beerUrl = 'https://api.punkapi.com/v2/beers/';
+  private beerUrl = 'https://api.punkapi.com/v2/beers/';
+  beers;
 
-  constructor(private _httpClient: HttpClient) { 
-    this.getListOfBeer()
-  }
+  constructor(private _httpClient: HttpClient) { }
 
   getListOfBeer() {
-    return this._httpClient.get(this.beerUrl).subscribe((res) => {
-      debugger;
-      this.beers = res;
+    return this._httpClient.get(this.beerUrl).subscribe(
+      res => {
+         this.beers = res;
     });
   }
 }
+
+
+// export class AppComponent {
+//   title;
+
+//   constructor(private http: HttpClient) {
+//     // this.title = _beerService.getListOfBeers();
+//   }
+
+//   ngOnInit(): void {
+//     this.http.get('https://api.punkapi.com/v2/beers')
+//       .subscribe(data => {
+//         this.title = data[5]["name"];
+//       },
+//         (error) => {
+//           debugger;
+//           console.log(error)
+//         }
+//       );
+//   }
+//   myFunction() {
+//     console.log(this.title)
+//   }
+// }
