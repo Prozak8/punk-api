@@ -1,4 +1,4 @@
-<div *ngFor="let beer of beers" class="container">
+<div *ngFor="let beer of beers">
   <div class="row">
     <div class="col-6">
       <h2 class="">{{ beer.name }}</h2>
@@ -9,4 +9,8 @@
     </div>
   </div>
 </div>
-  
+
+<div *ngIf="beers" class="row">
+  <button class="btn btn-primary" (click)="nextPage()">Next</button>
+  <button class="btn btn-danger" (click)="previousPage()">Previous</button>
+</div>
